@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Lakatan team</title>
+</head>
+<style>
+
+.btn1 {
+  background-color: #ffffff;
+  border: none;
+  margin: 20px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+#header-about 
+  {background-color:rgb(37, 37, 37);
+  color: #ffffff;
+  padding: 10px;
+  font-size: 50px;
+  width: auto;
+  margin: -1px;
+  z-index: 1;
+}
+
+.header-about-name {
+  font-size: 35px;
+  font-family:cursive;
+  color: #f09b24;
+  font-weight: 900;
+}
+
+.about-sebagai {
+  font-size: 30px;
+  font-weight: 100;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.new-td {
+  width: 20%;
+  background-color: #f09b24;
+  color: #fff;
+}
+
+td {
+  padding: 50px;
+  width: auto;
+  border-radius: 20px;
+}
+
+#btn-about {
+  cursor: pointer;
+}
+
+#btn-materi {
+  cursor: pointer;
+}
+
+#popupabout {
+  opacity: 0;
+  visibility: hidden;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.8);
+  background-color: rgb(255, 255, 255);
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(9, 9, 9, 0.5);
+  transition: all 0.4s ease-in-out;
+  width: 70%;
+  overflow-y: auto;
+  max-height: 80%;
+}
+
+#popupabout.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, -50%) scale(1);
+}
+/* materi */
+#popupmateri {
+  opacity: 0;
+  visibility: hidden;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.8);
+  background-color: rgb(255, 255, 255);
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(9, 9, 9, 0.5);
+  transition: all 0.4s ease-in-out;
+  width: 70%;
+  overflow-y: auto;
+  max-height: 80%;
+}
+
+#popupmateri.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+#btn-close {
+  margin: 20px;
+  padding: 14px 25px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+#btn-close_materi {
+  margin: 20px;
+  padding: 14px 25px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+a {text-decoration: none;
+  color: #fff;
+}
+
+a > p {
+  color: black;
+  cursor: pointer;
+  margin-left: 50px;
+  font-size: 20px;
+  list-style:circle
+}
+
+a > p:hover {
+  color:#f09b24;
+}
+.judul {
+  animation: move-up-down 2s ease-in-out infinite;
+  text-align: center;
+  font-size: 6em;
+  line-height: 95px;
+  margin: 20px;
+  padding: 20px;
+  font-family: cursive;
+  color: #f6ee82;
+  text-shadow: 10px 5px 1px #0d0d0d79;
+  cursor:default;
+  font-weight: 900;
+  -webkit-text-stroke: 3px rgb(245, 194, 41);
+  margin-top: 2%;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 200px;
+  padding-top: 10%;
+  flex-direction: column;
+}
+
+.flex-container > div {
+  background-color: #f6ee82;
+  width: 350px;
+  height: 200px;
+  margin: 10px;
+  text-align: center;
+  line-height: 75px;
+  font-size: 50px;
+  border-radius: 10px;
+  font-family: cursive;
+  transition: 0.05s;
+  color: #fff;
+  text-shadow: 2px 5px 1px #0d0d0de4;
+  box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.553);
+  -webkit-box-stroke: 3px rgb(245, 194, 41);
+}
+
+body {
+  background-image: url(ETS1.png);
+  background-size: 1980px;
+}
+
+.flex-container > div:hover {
+  background-color: #ffee02;
+  transform: scale(1.04);
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes move-up-down {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  body .flex-container {
+    background-size: 1980px;
+    align-items:center;
+  }
+}
+
+</style>
+<body>
+  <button class="btn1" onclick="changeBackground()">ganti backgrond</button>
+  <p class="judul">traffic education</p>
+      <div class="flex-container">
+        <div id="btn-materi">Materi</div>
+        <div><a href="...">Game</a></div>
+        <div id="btn-about">About</div>
+      </div>
+      <!-- Pop-up ABOUT -->
+      <div id="popupabout">
+        <div id="header-about">About</div>
+        <h1>&copy;2023 Lakatan Team. Project Akhir V0.1</h1>
+        <table>
+          <tr>
+            <td class="new-td" rowspan="2">
+              <p class="about-sebagai" align="center">P<br>R<br>O<br>J<br>E<br>C<br>T</p>
+              <p class="about-sebagai" align="center">B<br>Y</p>
+            </td>
+            <td>
+              <img src="me.jpg" width="180px" height="180px" alt="Foto me">
+              <p class="header-about-name">Abdul Hayyi</p>
+              <p class="about-sebagai">Sebagai : Support</p>
+              <p>Sosmed :</p>
+              <a href=""><img src="Ig.png" width="30px"></a>
+              <a href=""><img src="Fb.png" width="30px"></a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <img src="Yudii.jpeg" width="180px" height="180px" alt="Foto me">
+              <p class="header-about-name">Muhammad Yudi Fitriyadi</p>
+              <p class="about-sebagai">Sebagai : Ketua</p>
+              <p>Sosmed :</p>
+              <a href=""><img src="Ig.png" width="30px"></a>
+              <a href=""><img src="Fb.png" width="30px"></a>
+            </td>
+          </tr>
+        </table>
+        <button id="btn-close">Tutup</button></div>
+      </div>
+      <!-- Pop-up MATERI -->
+      <div id="popupmateri">
+        <h1 style="background-color: #f09b24; color: #fff;" >Welcome to materi</h1>
+          <a><p>Pengenalan Rambu-Rambu</p></a>
+          <a><p>Pengenalan Marka Jalan</p></a>
+          <a><p>Aturan Dalam Berkendara</p></a>
+          <a><p>Latihan</p></a>
+          <a><p>Quiz</p></a>
+        <button id="btn-close_materi">Tutup</button></div>
+      </div>
+    <audio id="myAudio">
+    <source src="Tema.mp3" type="audio/mpeg">
+    <source src="about_theme.ogg" type="audio/ogg">
+    </audio>
+    <script>
+      function changeBackground() {
+        var body = document.querySelector('body');
+        var currentBackground = body.style.backgroundImage;
+        var newBackground = '';
+
+        if (currentBackground.includes('ETS2.png')) {
+          newBackground = 'url("ETS1.png")';
+        } 
+        else {
+          newBackground = 'url("ETS2.png")';
+        }
+        body.style.backgroundImage = newBackground;
+      }
+
+      var audio = document.getElementById("myAudio");
+      audio.autoplay = true;
+      audio.load();
+      //script pop-up about
+      const btnAbout = document.getElementById('btn-about');
+      const popupAbout = document.getElementById('popupabout');
+      const btnClose = document.getElementById('btn-close');
+      btnAbout.addEventListener('click', () => {
+        popupAbout.classList.add('show');
+      });
+      btnClose.addEventListener('click', () => {
+        popupAbout.classList.remove('show');
+      });
+      //script pop-up materi
+      const btnmateri = document.getElementById('btn-materi');
+      const popupmateri = document.getElementById('popupmateri');
+      const btnClose_materi = document.getElementById('btn-close_materi');
+      btnmateri.addEventListener('click', () => {
+        popupmateri.classList.add('show');
+      });
+      btnClose_materi.addEventListener('click', () => {
+        popupmateri.classList.remove('show');
+      });
+    </script>  
+</body>
+</html>
